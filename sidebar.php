@@ -8,7 +8,23 @@
     <div class="sidebar-inner">
         <ul class="nav nav-sidebar">
             <li class="nav-active active"><a href="index.php?menu=home"><i class="icon-home"></i><span>Home</span></a></li>
+            <li class="nav-parent">
+                <a href="#"><i class="icon-docs"></i><span>Survey</span> <span class="fa arrow"></span></a>
+                <ul class="children collapse">
+                    <li><a href="index.php?menu=insertSurvey"> Insert Survey</a></li>
+                    <li><a href="index.php?menu=survey"> Survey Aktif</a></li>
+                    <li><a href="index.php?menu=survey"> Survey Draf</a></li>
+                </ul>
+            </li>
+            <li class="nav-parent">
+                <a href="#"><i class="icon-users"></i><span>Users</span> <span class="fa arrow"></span></a>
+                <ul class="children collapse">
+                    <li><a href=""> Member</a></li>
+                    <li><a href=""> Admin</a></li>
+                </ul>
+            </li>
         </ul>
+
         <div class="sidebar-footer clearfix">
             <a class="pull-left footer-settings" href="#" data-rel="tooltip" data-placement="top" data-original-title="Settings">
                 <i class="icon-settings"></i></a>

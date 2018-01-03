@@ -14,9 +14,11 @@ include_once './model/User.php';
 include_once './dao/UserDao.php';
 
 include_once './controller/AuthController.php';
+include_once './controller/SurveyController.php';
 
 
 $authController = new AuthController();
+$surveyController = new SurveyController();
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +64,15 @@ switch ($menu) {
         break;
     case 'logout' :
         $authController->logout();
+        break;
+    case 'survey' :
+        $surveyController->index();
+        break;
+    case 'insertSurvey' :
+        $surveyController->insert();
+        break;
+    case 'insertPertanyaan' :
+        $surveyController->insertPertanyaan();
         break;
     default:
         $authController->index();
