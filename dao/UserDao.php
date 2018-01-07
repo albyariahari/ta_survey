@@ -1,8 +1,10 @@
 <?php
 
-class UserDao {
+class UserDao
+{
 
-    public function login(User $data) {
+    public function login(User $data)
+    {
         $login_result = FALSE;
 
         $email = $data->getEmail();
@@ -34,20 +36,67 @@ class UserDao {
         return $login_result;
     }
 
-    /*
-    public function insertPegawai(\Pegawai $pegawai) {
+    public function getAllAdmin()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user WHERE role = 1";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+                $data->append($user);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function checkEmail($email)
+    {
+        $result = TRUE;
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user WHERE email=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $email);
+            $stmt->execute();
+            if ($stmt->rowCount() >= 1) {//ada datanya
+                $result = FALSE;
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
+
+    public function insertAdmin(User $data)
+    {
         $result = FALSE;
+        $nama = $data->getNama();
+        $email = $data->getEmail();
+        $telepon = $data->getNomorTelepon();
+        $password = $data->getPassword();
         try {
             $conn = Koneksi::get_koneksi();
             $conn->beginTransaction();
-            $sql = "INSERT INTO pegawai(nama_pegawai, bagian_pegawai, username_pegawai, password_pegawai, email_pegawai) VALUES(?,?,?,MD5(?),?)";
+            $sql = "INSERT INTO user(nama, nomor_telepon, email, password, role, status) VALUES(?,?,?,MD5(?),1,1)";
             $stmt = $conn->prepare($sql);
 
-            $stmt->bindParam(1, $pegawai->getNamaPegawai());
-            $stmt->bindParam(2, $pegawai->getBagianPegawai());
-            $stmt->bindParam(3, $pegawai->getUsernamePegawai());
-            $stmt->bindParam(4, $pegawai->getPasswordPegawai());
-            $stmt->bindParam(5, $pegawai->getEmailPegawai());
+            $stmt->bindParam(1, $nama);
+            $stmt->bindParam(2, $telepon);
+            $stmt->bindParam(3, $email);
+            $stmt->bindParam(4, $password);
             $stmt->execute();
             $conn->commit();
             $result = TRUE;
@@ -57,6 +106,29 @@ class UserDao {
         }
         return $result;
     }
-*/
-    
+
+    public function getUser($id)
+    {
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user WHERE id_user=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+
+            $stmt->execute();
+            $row = $stmt->fetch();
+            $user = new User();
+            $user->setIdUser($row['id_user']);
+            $user->setNama($row['nama']);
+            $user->setNomorTelepon($row['nomor_telepon']);
+            $user->setEmail($row['email']);
+            $user->setPassword($row['password']);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $user;
+    }
+
 }

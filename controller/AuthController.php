@@ -53,4 +53,11 @@ class AuthController
 
         require_once './logout.php';
     }
+
+    public function profile(){
+
+        $data = $this->userDao->getUser($_SESSION['id_user']);
+
+        require_once './view/user/profile.php';
+    }
 }

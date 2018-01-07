@@ -15,10 +15,7 @@
 </script>
 
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+
 <section>
     <?php
     include_once 'sidebar.php';
@@ -89,14 +86,14 @@
                     </div>
                 </div>
                 <div class="col-md-9 portlets">
-                    <div class="panel" <?php if(count($_SESSION['survey']) == 0)echo 'style="height: 319px"';?>>
+                    <div class="panel" <?php if (count($_SESSION['survey']) == 0) echo 'style="height: 319px"'; ?>>
                         <div class="panel-header">
                             <h3><i class="icon-doc"></i> <strong> Form</strong> Survey</h3>
                         </div>
                         <div class="panel-content">
                             <?php
                             if (count($_SESSION['survey']) == 0) {
-                                echo '<h1 style="text-align: center;vertical-align: middle; margin-top: 84px;">Form Kosong</h1>';
+                                echo '<h1 style="text-align: center;vertical-align: middle; margin-top: 84px;">Form Survey Kosong</h1>';
                             } else {
                                 ?>
                                 <div class="row">
@@ -211,9 +208,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer text-center">
-                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
+                                <button type="submit" class="btn btn-white bnt-square" name="btnMultipleAnswer">Add
                                 </button>
-                                <button type="submit" class="btn btn-default bnt-square" name="btnMultipleAnswer">Add
+                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
                                 </button>
                             </div>
                         </form>
@@ -251,9 +248,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer text-center">
-                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
+                                <button type="submit" class="btn btn-white bnt-square" name="btnMultipleChoice">Add
                                 </button>
-                                <button type="submit" class="btn btn-default bnt-square" name="btnMultipleChoice">Add
+                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
                                 </button>
                             </div>
                         </form>
@@ -291,9 +288,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer text-center">
-                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
+                                <button type="submit" class="btn btn-white bnt-square" name="btnMatrix">Add
                                 </button>
-                                <button type="submit" class="btn btn-default bnt-square" name="btnMatrix">Add
+                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
                                 </button>
                             </div>
                         </form>

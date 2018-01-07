@@ -15,10 +15,12 @@ include_once './dao/UserDao.php';
 
 include_once './controller/AuthController.php';
 include_once './controller/SurveyController.php';
+include_once './controller/UserController.php';
 
 
 $authController = new AuthController();
 $surveyController = new SurveyController();
+$userController = new UserController();
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +75,15 @@ switch ($menu) {
         break;
     case 'insertPertanyaan' :
         $surveyController->insertPertanyaan();
+        break;
+    case 'userAdmin' :
+        $userController->indexAdmin();
+        break;
+    case 'insertAdmin' :
+        $userController->insertAdmin();
+        break;
+    case 'profile' :
+        $authController->profile();
         break;
     default:
         $authController->index();

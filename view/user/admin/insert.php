@@ -13,21 +13,23 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2><strong>Insert</strong> Survey</h2>
+                <h2><strong>Insert</strong> Admin</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Insert Survey</li>
+                        <li><a href="index.php?menu=userAdmin">Admin</a>
+                        </li>
+                        <li class="active">Insert Admin</li>
                     </ol>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 "></div>
-                <div class="col-md-6 portlets">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
                     <div class="panel">
                         <div class="panel-header">
-                            <h3><i class="icon-doc"></i> <strong>Form</strong> Buat Survey</h3>
+                            <h3><i class="icon-doc"></i> <strong>Form</strong> Insert Admin</h3>
                         </div>
                         <div class="panel-content">
                             <div class="row">
@@ -35,35 +37,32 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-12 m-b-10">
-                                                <label>Nama Survey</label>
-                                                <input type="text" class="form-control form-white" placeholder="Nama Survey">
+                                                <label>Nama</label>
+                                                <input type="text" class="form-control form-white" placeholder="Nama"
+                                                       name="nama" required value="<?php echo $nama;?>">
                                             </div>
                                             <div class="col-md-12 m-b-10">
-                                                <label>Deskripsi Survey</label>
-                                                <textarea type="text" class="form-control form-white" placeholder="Deskripsi Survey"></textarea>
+                                                <label>Nomor Telepon</label>
+                                                <input type="number" class="form-control form-white"
+                                                       placeholder="Nomor Telepon" name="telepon" required value="<?php echo $telepon;?>">
                                             </div>
                                             <div class="col-md-12 m-b-10">
-                                                <label>Target Responden</label>
-                                                <select class="form-control">
-                                                    <option value="Test1">Test 1</option>
-                                                </select>
+                                                <label>Email</label>
+                                                <input type="email" class="form-control form-white" placeholder="Email"
+                                                       name="email" required  value="<?php echo $email;?>">
                                             </div>
                                             <div class="col-md-12 m-b-10">
-                                                <label>Status</label>
-                                                <select class="form-control">
-                                                    <option value="Test1">Test 1</option>
-                                                </select>
+                                                <label>Password</label>
+                                                <input type="password" class="form-control form-white"
+                                                       placeholder="Password" name="password" required>
                                             </div>
                                             <div class="col-md-12 m-b-10">
-                                                <label>Periode Survey</label>
-                                                <input type="date" class="form-control form-white input-sm" placeholder="Periode Survey">
+                                                <label>Confirm Password</label>
+                                                <input type="password" class="form-control form-white"
+                                                       placeholder="Confirm Password" name="re-password" required>
                                             </div>
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Periode Survey Akhir</label>
-                                                <input type="date" class="form-control form-white input-sm" placeholder="Periode Akhir Survey">
-                                            </div>
-                                            <div class="col-md-12 m-b-10 m-t-10">
-                                                <button class="btn btn-primary" name="btnBuatSurvey">Buat Survey</button>
+                                            <div class="col-md-12 m-t-10">
+                                                <button class="btn btn-primary" name="btnInsert">Insert Admin</button>
                                             </div>
                                         </div>
                                     </div>
@@ -72,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 "></div>
+                <div class="col-md-2"></div>
             </div>
             <div class="footer">
                 <div class="copyright">
@@ -135,6 +134,8 @@
 <script src="./assets/global/js/quickview.js"></script> <!-- Chat Script -->
 <script src="./assets/global/js/pages/search.js"></script> <!-- Search Script -->
 <!-- BEGIN PAGE SCRIPT -->
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
 <script src="./assets/global/plugins/switchery/switchery.min.js"></script> <!-- IOS Switch -->
 <script src="./assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
 <script src="./assets/global/plugins/dropzone/dropzone.min.js"></script>  <!-- Upload Image & File in dropzone -->
@@ -142,3 +143,17 @@
 <!-- END PAGE SCRIPT -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
 </body>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('danger', 'Insert Failed!', 'Password dan Confirm Password tidak sama.')";
+        } else if ($msg == 2) {
+            echo "makeAlert('danger', 'Insert Failed!', 'Email sudah tersedia.')";
+        } else if ($msg == 3) {
+            echo "makeAlert('danger', 'Insert Failed!', 'Terjadi kesalahan didalam database.')";
+        }
+        ?>
+    });
+</script>

@@ -24,7 +24,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="icon-user"></i><span>My Profile</span></a>
+                            <a href="index.php?menu=profile"><i class="icon-user"></i><span>My Profile</span></a>
                         </li>
                         <li>
                             <a href="index.php?menu=logout"><i class="icon-logout"></i><span>Logout</span></a>

@@ -1,5 +1,6 @@
-<body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
+<link href="./assets/global/plugins/datatables/dataTables.min.css" rel="stylesheet">
 
+<body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
 <section>
     <?php
     include_once 'sidebar.php';
@@ -13,66 +14,57 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2><strong>Insert</strong> Survey</h2>
+                <h2>Users <strong>Admin</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Insert Survey</li>
+                        <li class="active">Users Admin</li>
                     </ol>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 "></div>
-                <div class="col-md-6 portlets">
+                <div class="col-lg-12">
                     <div class="panel">
-                        <div class="panel-header">
-                            <h3><i class="icon-doc"></i> <strong>Form</strong> Buat Survey</h3>
-                        </div>
-                        <div class="panel-content">
-                            <div class="row">
-                                <form class="form-horizontal" method="post">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Nama Survey</label>
-                                                <input type="text" class="form-control form-white" placeholder="Nama Survey">
-                                            </div>
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Deskripsi Survey</label>
-                                                <textarea type="text" class="form-control form-white" placeholder="Deskripsi Survey"></textarea>
-                                            </div>
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Target Responden</label>
-                                                <select class="form-control">
-                                                    <option value="Test1">Test 1</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Status</label>
-                                                <select class="form-control">
-                                                    <option value="Test1">Test 1</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Periode Survey</label>
-                                                <input type="date" class="form-control form-white input-sm" placeholder="Periode Survey">
-                                            </div>
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Periode Survey Akhir</label>
-                                                <input type="date" class="form-control form-white input-sm" placeholder="Periode Akhir Survey">
-                                            </div>
-                                            <div class="col-md-12 m-b-10 m-t-10">
-                                                <button class="btn btn-primary" name="btnBuatSurvey">Buat Survey</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                        <a href="index.php?menu=insertAdmin" class="btn btn-primary" style="margin: 20px;"><i class="icon-plus"></i> Insert Admin</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel">
+                        <div class="panel-content pagination2 table-responsive">
+                            <table class="table table-hover table-dynamic">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>No Telepon</th>
+                                    <th>Email</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $no = 1;
+                                while ($data->valid()) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $no; ?></td>
+                                        <td><?php echo $data->current()->getNama(); ?></td>
+                                        <td><?php echo $data->current()->getNomorTelepon(); ?></td>
+                                        <td><?php echo $data->current()->getEmail(); ?></td>
+                                    </tr>
+                                    <?php
+                                    $no++;
+                                    $data->next();
+                                }
+
+                                ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 "></div>
             </div>
             <div class="footer">
                 <div class="copyright">
@@ -102,15 +94,13 @@
     </div>
 </div>
 <!-- END PRELOADER -->
-<a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
 <script src="./assets/global/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="./assets/global/plugins/jquery/jquery-migrate-3.0.0.min.js"></script>
 <script src="./assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="./assets/global/plugins/gsap/main-gsap.min.js"></script>
 <script src="./assets/global/plugins/tether/js/tether.min.js"></script>
 <script src="./assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="./assets/global/plugins/bootstrap/js/jasny-bootstrap.min.js"></script>
-
+<script src="./assets/global/plugins/appear/jquery.appear.js"></script>
 <script src="./assets/global/plugins/jquery-cookies/jquery.cookies.min.js"></script> <!-- Jquery Cookies, for theme -->
 <script src="./assets/global/plugins/jquery-block-ui/jquery.blockUI.min.js"></script>
 <!-- simulate synchronous behavior when using AJAX -->
@@ -134,11 +124,23 @@
 <script src="./assets/global/js/widgets/notes.js"></script> <!-- Notes Widget -->
 <script src="./assets/global/js/quickview.js"></script> <!-- Chat Script -->
 <script src="./assets/global/js/pages/search.js"></script> <!-- Search Script -->
-<!-- BEGIN PAGE SCRIPT -->
-<script src="./assets/global/plugins/switchery/switchery.min.js"></script> <!-- IOS Switch -->
-<script src="./assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
-<script src="./assets/global/plugins/dropzone/dropzone.min.js"></script>  <!-- Upload Image & File in dropzone -->
-<script src="./assets/global/js/pages/form_icheck.js"></script>  <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
-<!-- END PAGE SCRIPT -->
+<!-- BEGIN PAGE SCRIPTS -->
+<script src="./assets/global/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
+<!-- Tables Filtering, Sorting & Editing -->
+<script src="./assets/global/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="./assets/global/js/pages/table_dynamic.js"></script>
+<!-- END PAGE SCRIPTS -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
 </body>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('success', 'Insert Success!', 'Admin telah dimasukan kedalam database.')";
+        }
+        ?>
+    });
+</script>
