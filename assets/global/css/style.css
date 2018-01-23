@@ -1014,10 +1014,12 @@ a.scrollup:hover {
   line-height: normal;
 }
 .topbar .header-right .navbar-nav > li > a:hover {
-  background: none !important;
+  background: #2b2e33 !important;
+  color: white !important;
 }
 .topbar .header-right .navbar-nav > li > a:focus {
-  background: none !important;
+  background: #222428 !important;
+  color: white !important;
 }
 .topbar .header-right .header-menu > li > a > i {
   display: block;

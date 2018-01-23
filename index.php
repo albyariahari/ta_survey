@@ -10,6 +10,9 @@ if (!isset($_SESSION['is_logged_admin'])) {
 include_once './utility/Koneksi.php';
 
 include_once './model/User.php';
+include_once './model/Survey.php';
+include_once './model/Pertanyaan.php';
+include_once './model/Pilihan.php';
 
 include_once './dao/UserDao.php';
 
