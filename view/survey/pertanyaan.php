@@ -18,7 +18,7 @@
     function addFormSingleTextBox() {
         var c = countGlobal
         c = c + 1;
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name=""></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><input type="text" class="form-control" placeholder="Jawaban" disabled></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><input type="text" class="form-control" placeholder="Jawaban" disabled></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
         $("#form-js").append(txt1);
 
         var number = "number" + c;
@@ -31,7 +31,94 @@
     function addFormCommentBox() {
         var c = countGlobal;
         c = c + 1;
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name=""></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><textarea class="form-control" placeholder="Jawaban" disabled rows="5"></textarea></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="CommentBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><textarea class="form-control" placeholder="Jawaban" disabled rows="5"></textarea></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+    }
+
+    function addFormMultipleAnswer() {
+        var multipleAnswer = document.getElementsByName("totalMultipleAnswer")[0].value;
+        var lainnya = document.getElementsByName("lainnyaMultipleAnswer")[0].checked;
+
+        var c = countGlobal;
+        c = c + 1;
+
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleAnswer" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div>';
+
+        for (var i = 1; i <= multipleAnswer; i++) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]"></div></div>';
+        }
+
+        if (lainnya) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled></div></div>';
+        }
+
+        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+    }
+
+    function addFormMultipleChoice() {
+        var multipleChoice = document.getElementsByName("totalMultipleChoice")[0].value;
+        var lainnya = document.getElementsByName("lainnyaMultipleChoice")[0].checked;
+
+        var c = countGlobal;
+        c = c + 1;
+
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleChoice" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white"placeholder="Penjelasan" name="penjelasan[]"></div>';
+
+        for (var i = 1; i <= multipleChoice; i++) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]"></div></div>';
+        }
+
+        if (lainnya) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled></div></div>';
+        }
+
+        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+    }
+
+    function addFormMatrix() {
+        var totalBaris = document.getElementsByName("totalBaris")[0].value;
+        var totalKolom = document.getElementsByName("totalKolom")[0].value;
+
+        var c = countGlobal;
+        c = c + 1;
+
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="Matrix" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Baris</label>';
+
+        for (var i = 1; i <= totalBaris; i++) {
+            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Baris ' + i + '" name="baris[]">';
+        }
+
+        txt1 = txt1 + '</div><div class="col-md-12 m-b-10"><label for="">Kolom</label>';
+
+        for (var i = 1; i <= totalKolom; i++) {
+            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Kolom ' + i + '" name="kolom[]">';
+        }
+
+
+        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div></div>';
+
         $("#form-js").append(txt1);
 
         var number = "number" + c;
@@ -146,14 +233,14 @@
                             //                            } else {
                             //                                ?>
                             <div class="row">
-                                <form class="form-horizontal">
+                                <form class="form-horizontal" method="post">
                                     <div class="col-md-12">
                                         <div id="form-js">
 
                                         </div>
                                     </div>
                                     <div class="col-md-12 m-t-20">
-                                        <button class="btn btn-success">Simpan</button>
+                                        <button class="btn btn-success" name="btnSimpan">Simpan</button>
                                     </div>
                                 </form>
                             </div>
@@ -188,32 +275,31 @@
                                         class="icons-office-52"></i></button>
                             <h4 class="modal-title"><strong>Multiple</strong> Answer</h4>
                         </div>
-                        <form method="post">
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="field-1" class="control-label">Total Pilihan</label>
-                                            <input type="number" class="form-control form-white"
-                                                   name="totalMultipleAnswer"
-                                                   placeholder="Total Pilihan" required>
-                                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">Total Pilihan</label>
+                                        <input type="number" class="form-control form-white"
+                                               name="totalMultipleAnswer"
+                                               placeholder="Total Pilihan" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="checkbox" class="form-control" name="lainnyaMultipleAnswer">Tambah
-                                            Kolom Lainnya
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="checkbox" class="form-control" name="lainnyaMultipleAnswer">Tambah
+                                        Kolom Lainnya
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer text-center">
-                                <button type="submit" class="btn btn-white bnt-square" name="btnMultipleAnswer">Add
-                                </button>
-                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
-                                </button>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button class="btn btn-white bnt-square" name="btnMultipleAnswer"
+                                    onclick="addFormMultipleAnswer()" data-dismiss="modal">Add
+                            </button>
+                            <button class="btn btn-danger bnt-square" data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,32 +314,31 @@
                                         class="icons-office-52"></i></button>
                             <h4 class="modal-title"><strong>Multiple</strong> Choice</h4>
                         </div>
-                        <form method="post">
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="field-1" class="control-label">Total Pilihan</label>
-                                            <input type="number" class="form-control form-white"
-                                                   name="totalMultipleChoice"
-                                                   placeholder="Total Pilihan" required>
-                                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">Total Pilihan</label>
+                                        <input type="number" class="form-control form-white"
+                                               name="totalMultipleChoice"
+                                               placeholder="Total Pilihan" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="checkbox" class="form-control" name="lainnyaMultipleChoice">Tambah
-                                            Kolom Lainnya
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="checkbox" class="form-control" name="lainnyaMultipleChoice">Tambah
+                                        Kolom Lainnya
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer text-center">
-                                <button type="submit" class="btn btn-white bnt-square" name="btnMultipleChoice">Add
-                                </button>
-                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
-                                </button>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button class="btn btn-white bnt-square" name="btnMultipleChoice"
+                                    onclick="addFormMultipleChoice()" data-dismiss="modal">Add
+                            </button>
+                            <button class="btn btn-danger bnt-square" data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -268,32 +353,31 @@
                                         class="icons-office-52"></i></button>
                             <h4 class="modal-title"><strong>Matrix</strong></h4>
                         </div>
-                        <form method="post">
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="field-1" class="control-label">Total Baris</label>
-                                            <input type="number" class="form-control form-white" name="totalBaris"
-                                                   placeholder="Total Baris" required>
-                                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">Total Baris</label>
+                                        <input type="number" class="form-control form-white" name="totalBaris"
+                                               placeholder="Total Baris" required>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="field-1" class="control-label">Total Kolom</label>
-                                            <input type="number" class="form-control form-white" name="totalKolom"
-                                                   placeholder="Total Kolom" required>
-                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">Total Kolom</label>
+                                        <input type="number" class="form-control form-white" name="totalKolom"
+                                               placeholder="Total Kolom" required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer text-center">
-                                <button type="submit" class="btn btn-white bnt-square" name="btnMatrix">Add
-                                </button>
-                                <button type="submit" class="btn btn-danger bnt-square" data-dismiss="modal">Close
-                                </button>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button class="btn btn-white bnt-square" name="btnMatrix" onclick="addFormMatrix()"
+                                    data-dismiss="modal">Add
+                            </button>
+                            <button class="btn btn-danger bnt-square" data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

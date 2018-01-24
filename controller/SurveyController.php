@@ -85,6 +85,10 @@ class SurveyController
 //            array_push($_SESSION['survey'], $this->addMatrix($baris, $kolom));
 //        }
 
+        if(isset($_POST['btnSimpan'])){
+            print_r($_POST);
+        }
+
         require_once './view/survey/pertanyaan.php';
     }
 
