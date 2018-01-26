@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa53e796-3bb0-45fe-8967-d74061539f6a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/controller/SurveyController.php" afterPath="$PROJECT_DIR$/controller/SurveyController.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/pertanyaan.php" afterPath="$PROJECT_DIR$/view/survey/pertanyaan.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +16,7 @@
       <file leaf-file-name="SurveyController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="1853">
               <caret line="148" column="8" lean-forward="false" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="83" />
               <folding>
                 <element signature="n#addCommentBox#0;n#SurveyController#0;n#!!top" expanded="false" />
@@ -32,21 +30,10 @@
       <file leaf-file-name="pertanyaan.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/survey/pertanyaan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="223" column="36" lean-forward="true" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
+            <state relative-caret-position="476">
+              <caret line="223" column="36" lean-forward="false" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
               <folding>
-                <element signature="e#66#92#0#HTML" expanded="false" />
-                <element signature="e#462#1702#0#HTML" expanded="false" />
-                <element signature="e#1737#2986#0#HTML" expanded="false" />
-                <element signature="e#3025#5085#0#HTML" expanded="false" />
-                <element signature="e#5124#7177#0#HTML" expanded="false" />
-                <element signature="e#7208#9026#0#HTML" expanded="false" />
-                <element signature="e#9054#9652#0#HTML" expanded="false" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
                 <element signature="e#13738#13806#0#PHP" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
                 <marker date="1516800886223" expanded="true" signature="4072:4109" ph="..." />
                 <marker date="1516800886223" expanded="true" signature="4428:4466" ph="..." />
                 <marker date="1516800886223" expanded="true" signature="6170:6207" ph="..." />
@@ -60,7 +47,7 @@
       <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sidebar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="493">
               <caret line="29" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="20" />
               <folding />
             </state>
@@ -71,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/view/survey/insertPertanyaan.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding>
                 <marker date="1516188599345" expanded="true" signature="4549:4609" ph="..." />
               </folding>
@@ -259,16 +246,17 @@
       <workItem from="1516174028109" duration="4863000" />
       <workItem from="1516188473272" duration="1850000" />
       <workItem from="1516365248094" duration="7166000" />
-      <workItem from="1516796078896" duration="4884000" />
+      <workItem from="1516796078896" duration="5483000" />
+      <workItem from="1516881534055" duration="265000" />
+      <workItem from="1516882052794" duration="87000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68812000" />
+    <option name="totallyTimeSpent" value="69763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -580,7 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="5783" column="7" lean-forward="false" selection-start-line="5783" selection-start-column="7" selection-end-line="5783" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -588,7 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="1017" column="26" lean-forward="false" selection-start-line="1017" selection-start-column="26" selection-end-line="1017" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -630,7 +616,7 @@
     <entry file="file://$PROJECT_DIR$/view/survey/insertPertanyaan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
             <marker date="1516188599345" expanded="true" signature="4549:4609" ph="..." />
           </folding>
@@ -639,7 +625,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="1853">
           <caret line="148" column="8" lean-forward="false" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="83" />
           <folding>
             <element signature="n#addCommentBox#0;n#SurveyController#0;n#!!top" expanded="false" />
@@ -653,13 +639,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="493">
           <caret line="29" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="20" />
           <folding />
         </state>
@@ -667,21 +652,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/survey/pertanyaan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="223" column="36" lean-forward="true" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
+        <state relative-caret-position="476">
+          <caret line="223" column="36" lean-forward="false" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
           <folding>
-            <element signature="e#66#92#0#HTML" expanded="false" />
-            <element signature="e#462#1702#0#HTML" expanded="false" />
-            <element signature="e#1737#2986#0#HTML" expanded="false" />
-            <element signature="e#3025#5085#0#HTML" expanded="false" />
-            <element signature="e#5124#7177#0#HTML" expanded="false" />
-            <element signature="e#7208#9026#0#HTML" expanded="false" />
-            <element signature="e#9054#9652#0#HTML" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
             <element signature="e#13738#13806#0#PHP" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#section#0;n#body#0;n#!!top" expanded="false" />
             <marker date="1516800886223" expanded="true" signature="4072:4109" ph="..." />
             <marker date="1516800886223" expanded="true" signature="4428:4466" ph="..." />
             <marker date="1516800886223" expanded="true" signature="6170:6207" ph="..." />
