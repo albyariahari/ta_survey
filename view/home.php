@@ -15,14 +15,29 @@
 
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
-            <div class="header">
-                <h2><strong>Home</strong></h2>
-                <div class="breadcrumb-wrapper">
-                    <ol class="breadcrumb">
-                        <li class="active">Home</li>
-                    </ol>
+            <div class="">
+                <div class="panel-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="widget widget_slider">
+                                <div class="slick" data-arrows="true">
+                                    <div class="slide">
+                                        <img src="./assets/global/images/gallery/1.jpg" alt="" style="width: 100%">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./assets/global/images/gallery/2.jpg" alt="" style="width: 100%">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="./assets/global/images/gallery/3.jpg" alt="" style="width: 100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
             <div class="footer">
                 <div class="copyright">
                     <p class="pull-left sm-pull-reset">
@@ -78,4 +93,6 @@
 <script src="./assets/global/js/quickview.js"></script> <!-- Chat Script -->
 <script src="./assets/global/js/pages/search.js"></script> <!-- Search Script -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
+
+<script src="./assets/global/plugins/slick/slick.min.js"></script> <!-- Slider -->
 </body>

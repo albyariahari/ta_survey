@@ -13,11 +13,11 @@ class UserDao
 
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT * FROM user WHERE email=? AND password = MD5(?) AND status=?";
+            $sql = "SELECT * FROM user WHERE email=? AND password = MD5(?)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $email);
             $stmt->bindParam(2, $password);
-            $stmt->bindParam(3, $status);
+//            $stmt->bindParam(3, $status);
             $stmt->execute();
             if ($stmt->rowCount() == 1) {//ada datanya
                 while ($row = $stmt->fetch()) {
