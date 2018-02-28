@@ -48,7 +48,7 @@ class UserDao
                 $user = new User();
                 $user->setIdUser($row['id_user']);
                 $user->setNama($row['nama']);
-                $user->setNomorTelepon($row['nomor_telepon']);
+//                $user->setNomorTelepon($row['nomor_telepon']);
                 $user->setEmail($row['email']);
                 $data->append($user);
             }

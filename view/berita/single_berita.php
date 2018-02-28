@@ -1,8 +1,19 @@
-<!-- BEGIN BODY -->
-<body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default dashboard">
+<link href="./assets/global/plugins/datatables/dataTables.min.css" rel="stylesheet">
+
+<body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
+
+<style>
+    .content li {
+        margin-left: 20px;
+    }
+
+    .content li span {
+        position: relative;
+        left: 20px;
+    }
+</style>
 
 <section>
-
     <?php
     include_once 'sidebar.php';
     ?>
@@ -12,29 +23,64 @@
         <?php
         include_once 'topbar.php';
         ?>
-
         <!-- BEGIN PAGE CONTENT -->
-        <div class="page-content" style="margin: 0; padding: 0; margin-top: 30px">
+        <div class="page-content">
+            <div class="header">
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb">
+                        <li><a href="index.php">Home</a>
+                        </li>
+                        <li><a href="index.php?menu=berita">Berita</a>
+                        </li>
+                        <li class="active">Data Berita</li>
+                    </ol>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-12" style="padding: 0">
-                    <div class="widget widget_slider" style="padding: 0">
-                        <div class="slick" data-arrows="true">
-                            <div class="slide">
-                                <img src="./assets/global/images/gallery/1.jpg" alt="" style="width: 100%">
-                            </div>
-                            <div class="slide">
-                                <img src="./assets/global/images/gallery/2.jpg" alt="" style="width: 100%">
-                            </div>
-                            <div class="slide">
-                                <img src="./assets/global/images/gallery/3.jpg" alt="" style="width: 100%">
-                            </div>
+                <div class="col-lg-12" style="margin-top: 50px">
+                    <div class="col-md-5">
+                        <img style="width: 100%" src="./assets/img_berita/<?php echo $data->getCover() ?>"
+                             alt="Berita"/>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="header">
+                            <h1 style="color: #319db5"><?php echo $data->getJudul() ?></h1>
+                            <i class="fa fa-calendar" style="font-size: 18px; margin-right: 10px">
+                                <span style="font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;">
+                                    <?php
+                                    $date = date_create($data->getCreated());
+                                    echo date_format($date, "d F y");
+                                    ?>
+                                </span>
+                            </i>
+                            <span style="font-size: 18px">|</span>
+                            <i class="fa fa-clock-o" style="font-size: 18px; margin-left: 10px; margin-right: 10px">
+                                <span style="font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;">
+                                    <?php
+                                    $date = date_create($data->getCreated());
+                                    echo date_format($date, "H:i");
+                                    ?>
+                                </span>
+                            </i>
+                            <span style="font-size: 18px">|</span>
+                            <i class="fa fa-user" style="font-size: 18px; margin-left: 10px">
+                                <span style="font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;">
+                                    <?php
+                                    echo $data->getUser();
+                                    ?>
+                                </span>
+                            </i>
+                        </div>
+                        <hr>
+                        <div class="content" style="font-size: 16px; line-height: 28px">
+                            <?php
+                            echo html_entity_decode($data->getDeskripsi());
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <div class="footer" style="padding-left: 50px; padding-right: 50px;">
+            <div class="footer">
                 <div class="copyright">
                     <p class="pull-left sm-pull-reset">
                         <span>Copyright <span class="copyright">©</span> 2016 </span>
@@ -53,7 +99,6 @@
     </div>
     <!-- END MAIN CONTENT -->
 </section>
-
 <!-- BEGIN PRELOADER -->
 <div class="loader-overlay">
     <div class="spinner">
@@ -63,7 +108,6 @@
     </div>
 </div>
 <!-- END PRELOADER -->
-<a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
 <script src="./assets/global/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="./assets/global/plugins/jquery/jquery-migrate-3.0.0.min.js"></script>
 <script src="./assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -94,7 +138,23 @@
 <script src="./assets/global/js/widgets/notes.js"></script> <!-- Notes Widget -->
 <script src="./assets/global/js/quickview.js"></script> <!-- Chat Script -->
 <script src="./assets/global/js/pages/search.js"></script> <!-- Search Script -->
+<!-- BEGIN PAGE SCRIPTS -->
+<script src="./assets/global/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
+<!-- Tables Filtering, Sorting & Editing -->
+<script src="./assets/global/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="./assets/global/js/pages/table_dynamic.js"></script>
+<!-- END PAGE SCRIPTS -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
-
-<script src="./assets/global/plugins/slick/slick.min.js"></script> <!-- Slider -->
 </body>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('success', 'Insert Success!', 'Admin telah dimasukan kedalam database.')";
+        }
+        ?>
+    });
+</script>
